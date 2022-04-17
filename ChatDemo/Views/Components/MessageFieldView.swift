@@ -9,13 +9,14 @@ import SwiftUI
 
 struct MessageFieldView: View {
     @State private var message = ""
+    @EnvironmentObject var messagesVM: MessagesViewModel
     
     var body: some View {
         HStack {
             CustomTextFieldView(placeholder: Text("Enter your message here"), text: $message)
             
             Button {
-                print("Message sent!")
+                messagesVM.sendMassage(text: message)
                 message = ""
             } label: {
                 Image(systemName: "paperplane.circle")
@@ -49,8 +50,10 @@ struct MessageFieldView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             MessageFieldView()
+                .environmentObject(MessagesViewModel())
                 .previewLayout(.sizeThatFits)
             MessageFieldView()
+                .environmentObject(MessagesViewModel())
                 .preferredColorScheme(.dark)
                 .previewLayout(.sizeThatFits)
         }

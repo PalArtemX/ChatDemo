@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
-    
+    @EnvironmentObject var messagesVM: MessagesViewModel
     
     var body: some View {
         VStack {
@@ -18,8 +18,8 @@ struct HomeView: View {
                     .background(Color.colorTheme.peach)
                 
                 ScrollView {
-                    ForEach(previewArrayMessage, id: \.self) { text in
-                        MessageBubbleView(message: Message(id: "12345", text: text, received: true, timestamp: Date()))
+                    ForEach(messagesVM.messages, id: \.id) { message in
+                        MessageBubbleView(message: message)
                     }
                 }
                 .padding()
@@ -43,5 +43,6 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
+            .environmentObject(MessagesViewModel())
     }
 }
