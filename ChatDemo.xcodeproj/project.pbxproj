@@ -53,6 +53,10 @@
 			children = (
 				F83E62C2280C3B7D00CB00AC /* ChatDemoApp.swift */,
 				F83E62C4280C3B7D00CB00AC /* ContentView.swift */,
+				F83E62D2280C3BA500CB00AC /* Views */,
+				F83E62D1280C3B9D00CB00AC /* ViewModels */,
+				F83E62D0280C3B9300CB00AC /* Models */,
+				F83E62D3280C3BAA00CB00AC /* Extension */,
 				F83E62C6280C3B7E00CB00AC /* Assets.xcassets */,
 				F83E62C8280C3B7E00CB00AC /* Preview Content */,
 			);
@@ -65,6 +69,34 @@
 				F83E62C9280C3B7E00CB00AC /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F83E62D0280C3B9300CB00AC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F83E62D1280C3B9D00CB00AC /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		F83E62D2280C3BA500CB00AC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F83E62D3280C3BAA00CB00AC /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
