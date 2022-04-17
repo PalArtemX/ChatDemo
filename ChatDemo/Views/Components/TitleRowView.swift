@@ -44,7 +44,7 @@ struct TitleRowView: View {
                 .background()
                 .mask(Circle())
         }
-        .padding(.horizontal)
+        .padding()
     }
 }
 

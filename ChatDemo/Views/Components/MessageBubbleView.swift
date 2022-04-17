@@ -30,7 +30,7 @@ struct MessageBubbleView: View {
             
         }
         .frame(maxWidth: .infinity, alignment: message.received ? .leading : .trailing)
-        .padding()
+        .padding(.horizontal)
         .onTapGesture {
             showTime.toggle()
         }
