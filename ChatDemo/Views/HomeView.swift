@@ -17,14 +17,21 @@ struct HomeView: View {
                 TitleRowView()
                     .background(Color.colorTheme.peach)
                 
-                ScrollView {
-                    ForEach(messagesVM.messages, id: \.id) { message in
-                        MessageBubbleView(message: message)
+                ScrollViewReader { proxy in
+                    ScrollView {
+                        ForEach(messagesVM.messages, id: \.id) { message in
+                            MessageBubbleView(message: message)
+                        }
+                    }
+                    .padding()
+                    .background()
+                    .cornerRadius(30, corners: [.topLeft, .topRight])
+                    .onChange(of: messagesVM.lastMessageId) { id in
+                        withAnimation {
+                            proxy.scrollTo(id, anchor: .bottom)
+                        }
                     }
                 }
-                .padding()
-                .background()
-                .cornerRadius(30, corners: [.topLeft, .topRight])
             }
             .background(Color.colorTheme.peach)
             
